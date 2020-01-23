@@ -20,9 +20,9 @@ Details about the competition can be found here:
 
 To run the test scripts:
 1. first ensure the test data files have been extracted for each year to it's relevant directory.
-    - extract [2019/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/all_data.zip) to the 2019 folder.
-    - extract [2018/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2018/stage%201/all_data.zip) to the 2018 folder.
-    - extract [2017/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2017/stage%201/all_data.zip) to the 2018 folder.
+    - extract [2019/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/all_data.zip) to the y2019 folder.
+    - ~~extract [2018/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2018/stage%201/all_data.zip) to the 2018 folder.~~
+    - ~~extract [2017/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2017/stage%201/all_data.zip) to the 2017 folder.~~
 2. run the test.py file
     ```bash
    python test.py 
