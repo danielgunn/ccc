@@ -1,6 +1,6 @@
 # Canadian Computing Competition (CCC) Solutions
 
-This is used as a supplementary lesson material in my high school computer science classes.  It is a list of solutions that we implement as part of lessons.  We are as a class preparing to enter this competition and will produce these solutions in our preparations.  Feel free to contribute or collaborate on these.
+This can be used as supplementary lesson material for high school computer science classes learning python.   My class is preparing to enter this competition and I am producing these solutions as part of our preparations and classroom activities.   Feel free to contribute or collaborate on these.
 
 ## More information
 
@@ -14,7 +14,7 @@ Details about the competition can be found here:
     - [x] [Problem J2: Time To Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j2.py)
     - [x] [Problem J3: Cold Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j3.py)
     - [x] [Problem J4/S1: Flipper](https://github.com/danielgunn/ccc/blob/master/y2019/j4.py)
-    - [ ] Problem J5: Rule of Three
+    - [x] [Problem J5: Rule of Three](https://github.com/danielgunn/ccc/blob/master/y2019/j5.py)
 
 ## Testing
 

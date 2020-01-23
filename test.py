@@ -41,5 +41,10 @@ class TestAllYears(unittest.TestCase):
         from y2019 import j4
         self.check_question_data(j4, 'y2019/all_data/s1_j4/')
 
+    # NOTE: 2019/J5 has multiple solutions, so we cannot use the previous testing method
+    """def test_2019_j5(self):
+        from y2019 import j5
+        self.check_question_data(j5, 'y2019/all_data/j5/')"""
+
 if __name__ == '__main__':
     unittest.main()
