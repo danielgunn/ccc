@@ -12,7 +12,7 @@ Details about the competition can be found here:
 - 2019  
     - [x] [Problem J1: Winning Score](https://github.com/danielgunn/ccc/blob/master/y2019/j1.py)
     - [x] [Problem J2: Time To Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j2.py)
-    - [ ] Problem J3: Cold Compress
+    - [x] [Problem J3: Cold Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j3.py)
     - [ ] Problem J4/S1: Flipper
     - [ ] Problem J5: Rule of Three
 
