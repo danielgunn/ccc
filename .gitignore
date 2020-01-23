@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# input/output solutions data
+*/*.zip
+*/all_data
