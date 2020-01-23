@@ -9,7 +9,7 @@ Details about the competition can be found here:
 
 ## Problems we have solved
 
-- 2019  
+- [2019 Junior](https://cemc.uwaterloo.ca/contests/computing/2019/index.html)
     - [x] [Problem J1: Winning Score](https://github.com/danielgunn/ccc/blob/master/y2019/j1.py)
     - [x] [Problem J2: Time To Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j2.py)
     - [x] [Problem J3: Cold Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j3.py)
