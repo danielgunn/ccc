@@ -5,12 +5,11 @@ from io import StringIO
 
 class TestAllYears(unittest.TestCase):
     @patch('sys.stdout', new_callable=io.StringIO)
-    def test_2019_j1(self, mock_stdout):
-        from y2019 import j1
+    def check_question_data(self, module, data_folder, mock_stdout):
         import glob, os
 
         # for each input test
-        for filename in glob.iglob('y2019/all_data/j1/**.in', recursive=True):
+        for filename in glob.iglob(data_folder + '**.in', recursive=False):
             if os.path.isfile(filename):
                 with open(filename, 'r') as inf:
                     input_data = inf.read()
@@ -19,12 +18,20 @@ class TestAllYears(unittest.TestCase):
 
                         # patch the input and assert the output
                         with patch('sys.stdin', StringIO(input_data)):
-                            j1.main()
+                            module.main()
                             res = mock_stdout.getvalue()
-                            self.assertEqual(output_data, res, msg='failed {0} with output {1}'.format(filename[:-3], bytes(res, "utf-8").decode("unicode_escape")))
+                            self.assertEqual(output_data, res, msg='failed {0} with output {1}'.format(filename[:-3], res))
                         mock_stdout.seek(0)
+                        mock_stdout.truncate(0)
             assert True
 
+    def test_2019_j1(self):
+        from y2019 import j1
+        self.check_question_data(j1, 'y2019/all_data/j1/')
+
+    def test_2019_j2(self):
+        from y2019 import j2
+        self.check_question_data(j2, 'y2019/all_data/j2/')
 
 if __name__ == '__main__':
     unittest.main()
