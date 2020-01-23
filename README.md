@@ -9,7 +9,7 @@ Details about the competition can be found here:
 
 ## Problems we have solved
 
-- 2019
+- 2019  
     - [x] [Problem J1: Winning Score](https://github.com/danielgunn/ccc/blob/master/y2019/j1.py)
     - [x] [Problem J2: Time To Compress](https://github.com/danielgunn/ccc/blob/master/y2019/j2.py)
     - [ ] Problem J3: Cold Compress
@@ -18,7 +18,12 @@ Details about the competition can be found here:
 
 ## Testing
 
-To run the test scripts:
+To run the test scripts, you can either:
+- Use the Makefile (requires `wget` and `make` to be installed)
+```bash
+make test
+```
+-  OR, Follow the following steps:
 1. first ensure the test data files have been extracted for each year to it's relevant directory.
     - extract [2019/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2019/stage%201/all_data.zip) to the y2019 folder.
     - ~~extract [2018/all_data.zip](https://cemc.uwaterloo.ca/contests/computing/2018/stage%201/all_data.zip) to the 2018 folder.~~
