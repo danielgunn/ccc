@@ -17,7 +17,7 @@ Details about the competition can be found here:
     - [x] [Problem J5: Rule of Three](https://github.com/danielgunn/ccc/blob/master/y2019/j5.py)
 - [2019 Senior](https://cemc.uwaterloo.ca/contests/computing/2019/index.html)
     - [x] [Problem S1: Flipper](https://github.com/danielgunn/ccc/blob/master/y2019/j4.py)
-    - [ ] Problem S2: Pretty Average Primes
+    - [x] [Problem S2: Pretty Average Primes](https://github.com/danielgunn/ccc/blob/master/y2019/s2.py)
     - [ ] Problem S3: Arithmetic Square
     - [ ] Problem S4: Tourism
     - [ ] Problem S5: Triangle: The Data Structure

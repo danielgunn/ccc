@@ -46,5 +46,9 @@ class TestAllYears(unittest.TestCase):
         from y2019 import j5
         self.check_question_data(j5, 'y2019/all_data/j5/')"""
 
+    def test_2019_s2(self):
+        from y2019 import s2
+        self.check_question_data(s2, 'y2019/all_data/s2/')
+
 if __name__ == '__main__':
     unittest.main()
