@@ -27,20 +27,29 @@ def find_solution_steps(state, steps_remaining):
                     return "{0} {1} {2}\n{3}".format(nule_num + 1, pos + 1, s2, seq)
     return 0
 
-# for convenience: a rule will be defined as:
-# 0 - a start state string
-# 1 - a end state string
-# 2 - the length of the start state
-# 3 - the length of the end state
+def main():
+    global goal_state
+    global rules
 
-for i in range(3):
+    rules = []
+
+    # for convenience: a rule will be defined as:
+    # 0 - a start state string
+    # 1 - a end state string
+    # 2 - the length of the start state
+    # 3 - the length of the end state
+    for i in range(3):
+        l = input().split()
+        l.append(len(l[0]))
+        l.append(len(l[1]))
+        rules.append(l)
+
     l = input().split()
-    l.append(len(l[0]))
-    l.append(len(l[1]))
-    rules.append(l)
+    goal_state = l[2]
 
-l = input().split()
-goal_state = l[2]
+    seq = find_solution_steps(l[1], int(l[0]))
+    print(seq)
 
-seq = find_solution_steps(l[1], int(l[0]))
-print(seq)
+
+if __name__ == "__main__":
+    main()

@@ -8,6 +8,9 @@ class TestAllYears(unittest.TestCase):
     def check_question_data(self, module, data_folder, mock_stdout):
         import glob, os
 
+        mock_stdout.seek(0)
+        mock_stdout.truncate(0)
+
         # for each input test
         for filename in glob.iglob(data_folder + '**.in', recursive=False):
             if os.path.isfile(filename):
@@ -20,10 +23,32 @@ class TestAllYears(unittest.TestCase):
                         with patch('sys.stdin', StringIO(input_data)):
                             module.main()
                             res = mock_stdout.getvalue()
-                            self.assertEqual(output_data, res, msg='failed {0} with output {1}'.format(filename[:-3], res))
+                            self.assertEqual(output_data, res,
+                                             msg='failed {0} with output {1}'.format(filename[:-3], res))
                         mock_stdout.seek(0)
                         mock_stdout.truncate(0)
             assert True
+
+    def check_question_runs_only(self, module, data_folder):
+        import glob, os
+
+        # for each input test
+        for filename in glob.iglob(data_folder + '**.in', recursive=False):
+            if os.path.isfile(filename):
+                print("testing " + filename)
+                with open(filename, 'r') as inf:
+                    input_data = inf.read()
+
+                    # patch the input and assert the output
+                    with patch('sys.stdin', StringIO(input_data)):
+                        module.main()
+
+            assert True
+
+    def test_2019_s3(self):
+       from y2019 import s3
+       self.check_question_runs_only(s3, 'y2019/all_data/s3/')
+
 
     def test_2019_j1(self):
         from y2019 import j1
@@ -41,14 +66,13 @@ class TestAllYears(unittest.TestCase):
         from y2019 import j4
         self.check_question_data(j4, 'y2019/all_data/s1_j4/')
 
-    # NOTE: 2019/J5 has multiple solutions, so we cannot use the previous testing method
-    """def test_2019_j5(self):
-        from y2019 import j5
-        self.check_question_data(j5, 'y2019/all_data/j5/')"""
-
     def test_2019_s2(self):
         from y2019 import s2
         self.check_question_data(s2, 'y2019/all_data/s2/')
+
+    def test_2019_j5(self):
+        from y2019 import j5
+        self.check_question_runs_only(j5, 'y2019/all_data/j5/')
 
 if __name__ == '__main__':
     unittest.main()

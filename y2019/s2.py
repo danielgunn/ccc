@@ -21,7 +21,6 @@ def SieveOfEratosthenes(n):
 
 
 def main():
-    m = 2
     t = int(input())
 
     prime = SieveOfEratosthenes(maxN * 2)
