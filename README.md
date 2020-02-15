@@ -18,9 +18,9 @@ Details about the competition can be found here:
 - [2019 Senior](https://cemc.uwaterloo.ca/contests/computing/2019/index.html)
     - [x] [Problem S1: Flipper](https://github.com/danielgunn/ccc/blob/master/y2019/j4.py)
     - [x] [Problem S2: Pretty Average Primes](https://github.com/danielgunn/ccc/blob/master/y2019/s2.py)
-    - [ ] Problem S3: Arithmetic Square
-    - [ ] Problem S4: Tourism
-    - [ ] Problem S5: Triangle: The Data Structure
+    - [x] [Problem S3: Arithmetic Square](https://github.com/danielgunn/ccc/blob/master/y2019/s3.py)
+    - [x] [Problem S4: Tourism](https://github.com/danielgunn/ccc/blob/master/y2019/s4.py)
+    - [x] [Problem S5: Triangle: The Data Structure](https://github.com/danielgunn/ccc/blob/master/y2019/s5.py)
 ## Testing
 
 To run the test scripts, you can either:
