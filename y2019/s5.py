@@ -1,4 +1,28 @@
-import time
+import numpy as np
+from numba import njit
+
+@njit
+def find_total(n,k,a):
+    flip = True
+    for level in range(2, k + 1):
+        flip = not flip
+        for r in range(n - level, -1, -1):
+            for c in range(r + 1):
+                if flip:
+                    a[r, c] = max(a[c, r + 2], a[c + 1, r + 2], a[r, c])
+                else:
+                    a[c, r + 1] = max(a[r + 1, c], a[r + 1, c + 1], a[r, c])
+
+    tot = 0
+    if flip:
+        for r in range(0, n - k + 1):
+            for c in range(r + 1):
+                tot += a[r, c]
+    else:
+        for r in range(n):
+            for c in range(r + 1, n - k + 2):
+                tot += a[r, c]
+    return tot
 
 def main():
     n, k = map(int, input().split())
@@ -6,30 +30,24 @@ def main():
 
     #stime = time.time()
 
-    a = []
-    for i in range(n):
+    # We will store the triangle in a matrix
+    # (r,c) - store the value of the maximum triangle at this level
+    # (c,r+1) - store the previous level's maximum triangle
+    a = np.empty((n,n+1), int)
+    for r in range(n):
         # 0 - this level
         # 1 - previous level
-        r = [[int(x),int(x)] for x in input().split()]
-        a.append(r)
+        x = input().split()
+        for c in range(len(x)):
+            a[r,c] = x[c]
+            a[c,r+1] = x[c]
 
-    this = 0
-    for level in range(2,k+1):
-        this = (this + 1) % 2
-        prev = (this + 1) % 2
-        for r in range(n-level,-1,-1):
-            for c in range(len(a[r])):
-                a[r][c][this] = max(a[r+1][c][prev], a[r+1][c+1][prev], a[r][c][this])
-
-    sum = 0
-    for r in range(0,n-k+1):
-        for c in a[r]:
-            sum += c[this]
-    print(sum)
+    tot = find_total(n,k,a)
+    print(tot)
 
     #etime = time.time()
     #print("time:", (etime - stime))
-    # time: 57.030564069747925
+    #time: 0.5824160575866699
 
 if __name__ == "__main__":
     main()
