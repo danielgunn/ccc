@@ -3,7 +3,7 @@ from numba import njit
 
 @njit
 def find_total(n,k,a):
-    flip = True
+    flip = True # we flip back and forth between which corner we store this levels information in the matrix
     for level in range(2, k + 1):
         flip = not flip
         for r in range(n - level, -1, -1):
@@ -28,19 +28,14 @@ def main():
     n, k = map(int, input().split())
     #print(n,k)
 
-    #stime = time.time()
 
     # We will store the triangle in a matrix
     # (r,c) - store the value of the maximum triangle at this level
     # (c,r+1) - store the previous level's maximum triangle
     a = np.empty((n,n+1), int)
     for r in range(n):
-        # 0 - this level
-        # 1 - previous level
-        x = input().split()
-        for c in range(len(x)):
-            a[r,c] = x[c]
-            a[c,r+1] = x[c]
+        a[r,:r+1] = np.fromstring(input(), dtype=int, sep=" ")  # this level's score
+        a[:r+1,r+1] = a[r,:r+1]                                 # previous level's score (for now its the same)
 
     tot = find_total(n,k,a)
     print(tot)
